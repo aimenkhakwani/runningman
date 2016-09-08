@@ -27,17 +27,9 @@
     $app->post("/guess", function() use ($app) {
 
         $hangman = $_SESSION['guesses'];
-        // return $hangman->compare($_POST['guessLetter']);
+        $status = $hangman->compare($_POST['guessLetter']);
 
-        if ($hangman->compare($_POST['guessLetter']))
-        {
-            return $hangman->getGuessWord() . " True";
-
-        } else {
-            return $hangman->getGuessWord() . " Wrong!";
-        }
-        // return $app['twig']->render('main.html.twig', array('guesses' => $_SESSION['guesses']));
-        // return var_dump($hangman);
+        return $app['twig']->render('main.html.twig', array('status' => $status));
     });
 
     return $app;

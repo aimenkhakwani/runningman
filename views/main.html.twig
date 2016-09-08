@@ -2,13 +2,22 @@
 <head>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
     <title>Runningman!</title>
+    <style>
+    .container {
+        max-width: 300px;
+        text-align: center;
+    }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="jumbotron">
+        <div class="content">
             <h1>Running -> man</h1>
+            <img src='img/running-man.gif'>
         </div>
-        <div class='output'></div>
+        <div class='output'>
+            <h2>{{ status }}</h2>
+        </div>
         <form action='/guess' method="post">
             <input type="text" name="guessLetter" placeholder="Guess a letter">
             <button class="btn">Guess!</button>
