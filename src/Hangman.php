@@ -8,7 +8,7 @@
 
         function __construct()
         {
-            $dictionary = array("hangman", "grapefruit", "epicodus");
+            $dictionary = array("computer", "grapefruit", "iphone", "coffee");
             $this->word_to_guess = $dictionary[rand(0, count($dictionary) - 1)];
             $this->word_in_progress = $this->word_to_guess;
         }
@@ -31,7 +31,7 @@
                     array_push($this->correct, $guessLetter);
                     $this->word_in_progress = str_replace($guessLetter, "", $this->word_in_progress);
                     if (strlen($this->word_in_progress) == 0) {
-                        return "You Win! Your man just ran away." . $this->word_to_guess;
+                        return "You Win! Your man just ran away with your " . $this->word_to_guess;
                     }
                     return "Correct Guess:  " . $guessLetter;
                 }
